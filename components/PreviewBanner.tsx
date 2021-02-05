@@ -23,7 +23,7 @@ const Container = styled.div`
 
 const PreviewBanner = (): JSX.Element => (
   <OffsetPreviewContent>
-    <Container sx={{ p: 2, borderBottom: '1px solid grey' }}>
+    <Container>
       <p>
         You are viewing a preview version of the site. Close the banner to return to the live
         version

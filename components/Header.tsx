@@ -1,3 +1,7 @@
-export default function Header({ title }) {
-  return <h1 className="title">{title}</h1>
+type Props = {
+  title: string
+}
+
+export default function Header({ title }: Props) {
+  return <h1>{title}</h1>
 }
