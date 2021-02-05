@@ -1,0 +1,23 @@
+{
+  "search.exclude": {
+    "**/coverage": true,
+    "**/dist": true,
+    "**/test-results": true,
+    "**/node_modules": true
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  // Show eslint warnings and errors in typescript files
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.alwaysShowStatus": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[ts,tsx,js,jsx]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
