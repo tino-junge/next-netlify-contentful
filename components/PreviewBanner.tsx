@@ -29,7 +29,7 @@ const PreviewBanner = (): JSX.Element => (
         version
       </p>
       {/* @ts-ignore theme-ui doesn't change the other props to match the types of the ones given for 'as'  */}
-      <Close as="a" href="/api/exit-preview" />
+      <a href="/api/exit-preview">Close preview</a>
     </Container>
   </OffsetPreviewContent>
 )
