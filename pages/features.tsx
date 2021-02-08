@@ -29,12 +29,18 @@ export default function Home(props: Props): JSX.Element {
   return (
     <div className="container">
       <Head>
-        <title id="home-title">{title}</title>
+        <title id="home-title">Features</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
         {props.preview && <PreviewBanner />}
+        <p>
+          <Link href={'/'}>
+            <a>{'< Back'}</a>
+          </Link>
+        </p>
+        <p>Features</p>
         <Header title={title || ''} />
         <div
           style={{
@@ -58,16 +64,6 @@ export default function Home(props: Props): JSX.Element {
             </Link>
           ))}
         </div>
-        <p>
-          <Link href={'/features'}>
-            <a>Go to Features</a>
-          </Link>
-        </p>
-        <p>
-          <Link href={'/about/team'}>
-            <a>Go to Team</a>
-          </Link>
-        </p>
       </main>
     </div>
   )

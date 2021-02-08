@@ -1,11 +1,11 @@
-import { getAllPages, getPage } from '../lib/contentful'
+import { getAllPages, getPage } from '../../lib/contentful'
 
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
-import Header from '../components/Header'
+import Header from '../../components/Header'
 import Link from 'next/link'
-import type { Page } from '../generated/graphql'
-import PreviewBanner from '../components/PreviewBanner'
+import type { Page } from '../../generated/graphql'
+import PreviewBanner from '../../components/PreviewBanner'
 import { useRouter } from 'next/router'
 
 type Props = {
@@ -29,12 +29,16 @@ export default function Home(props: Props): JSX.Element {
   return (
     <div className="container">
       <Head>
-        <title id="home-title">{title}</title>
+        <title id="home-title">About</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
         {props.preview && <PreviewBanner />}
+        <Link href={'/'}>
+          <a>{'< Back'}</a>
+        </Link>
+        <p>The team</p>
         <Header title={title || ''} />
         <div
           style={{
@@ -58,16 +62,6 @@ export default function Home(props: Props): JSX.Element {
             </Link>
           ))}
         </div>
-        <p>
-          <Link href={'/features'}>
-            <a>Go to Features</a>
-          </Link>
-        </p>
-        <p>
-          <Link href={'/about/team'}>
-            <a>Go to Team</a>
-          </Link>
-        </p>
       </main>
     </div>
   )
