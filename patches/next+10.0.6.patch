@@ -1,5 +1,5 @@
 diff --git a/node_modules/next/dist/build/webpack/loaders/next-serverless-loader/utils.js b/node_modules/next/dist/build/webpack/loaders/next-serverless-loader/utils.js
-index 398bc65..563e48a 100644
+index 398bc65..1355281 100644
 --- a/node_modules/next/dist/build/webpack/loaders/next-serverless-loader/utils.js
 +++ b/node_modules/next/dist/build/webpack/loaders/next-serverless-loader/utils.js
 @@ -28,6 +28,6 @@ if(detectedDomain){const localeToCheck=localePathResult.detectedLocale?detectedL
@@ -11,8 +11,9 @@ index 398bc65..563e48a 100644
 +if(shouldStripDefaultLocale&&acceptPreferredLocale!==defaultLocale){const previous=res.getHeader('set-cookie');res.setHeader('set-cookie',[...(typeof previous==='string'?[previous]:Array.isArray(previous)?previous:[]),_cookie.default.serialize('NEXT_LOCALE',defaultLocale,{httpOnly:true,path:'/'})]);}/*res.setHeader('Location',(0,_url.format)({// make sure to include any query values when redirecting
 +...parsedUrl,pathname:localeDomainRedirect?localeDomainRedirect:shouldStripDefaultLocale?basePath||'/':`${basePath}/${detectedLocale}`}));res.statusCode=_constants.TEMPORARY_REDIRECT_STATUS;res.end();return;*/}detectedLocale=localePathResult.detectedLocale||detectedDomain&&detectedDomain.defaultLocale||defaultLocale;return{defaultLocale,detectedLocale,routeNoAssetPath};}return{handleLocale,handleRewrites,handleBasePath,defaultRouteRegex,normalizeVercelUrl,dynamicRouteMatcher,defaultRouteMatches,interpolateDynamicPath,getParamsFromRouteMatches,normalizeDynamicRouteParams};}
  //# sourceMappingURL=utils.js.map
+\ No newline at end of file
 diff --git a/node_modules/next/dist/next-server/server/next-server.js b/node_modules/next/dist/next-server/server/next-server.js
-index c58d7ea..210b508 100644
+index c58d7ea..663532c 100644
 --- a/node_modules/next/dist/next-server/server/next-server.js
 +++ b/node_modules/next/dist/next-server/server/next-server.js
 @@ -30,8 +30,9 @@ const matchedDomain=(0,_detectDomainLocale.detectDomainLocale)(i18n.domains,unde
